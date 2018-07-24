@@ -1,3 +1,4 @@
+//Global variables
 var container = document.querySelector('.image-list');
 var lightbox = document.querySelector('#lightbox');
 var x = document.querySelector('.close');
@@ -18,12 +19,17 @@ var images = [
     {url: 'CSS/images/gracievid.gif'}
 ]
 
+//Functions
+var setSource = function(source) {
+    var lightboxImg = document.querySelector('#lightboxImage');
+    lightboxImg.setAttribute('src', source);
+}
+//Modal Functions
 var displayModal = function(event) {
     var source = event.target.getAttribute('src');
     index = event.target.getAttribute('data-index');
     lightbox.classList.add('open');
-    var lightboxImg = document.querySelector('#lightboxImage');
-    lightboxImg.setAttribute('src', source);
+    setSource(source);
 }
 
 var closeModal = function(event) {
@@ -32,26 +38,24 @@ var closeModal = function(event) {
     }
 }
 
-var changePhotosLeft = function() {
-    index--;
-    if (index < 0) {
-        index = (images.length - 1);
+//Photo Changing Function
+var changePhotos = function(event) {
+    if (event.target === left) {
+        index--;
+        if (index < 0) {
+            index = (images.length - 1);
+        }
+    } else if (event.target === right) {
+        index++;
+        if (index >= images.length) {
+            index = 0;
+        }
     }
     var source = images[index].url;
-    var lightboxImg = document.querySelector('#lightboxImage');
-    lightboxImg.setAttribute('src', source);
+    setSource(source);
 }
 
-var changePhotosRight = function() {
-    index++;
-    if (index >= images.length) {
-        index = 0;
-    }
-    var source = images[index].url;
-    var lightboxImg = document.querySelector('#lightboxImage');
-    lightboxImg.setAttribute('src', source);
-}
-
+//Menu Functions
 var displayMenu = function() {
     menuPopup.classList.add('open');
     menu.classList.add('close');
@@ -64,6 +68,7 @@ var closeMenu = function(event) {
     }
 }
 
+//Image List creation
 for (var i = 0; i < images.length; i++) {
     var image = images[i];
     var newImage = document.createElement('img');
@@ -78,9 +83,10 @@ for (var i = 0; i < images.length; i++) {
     container.appendChild(item);
 }
 
+//Event Listeners
 lightbox.addEventListener('click', closeModal);
-left.addEventListener('click', changePhotosLeft);
-right.addEventListener('click', changePhotosRight);
+left.addEventListener('click', changePhotos);
+right.addEventListener('click', changePhotos);
 menu.addEventListener('click', displayMenu);
 menuPopup.addEventListener('click', closeMenu);
 window.addEventListener('click', closeMenu);

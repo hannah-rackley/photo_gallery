@@ -9,11 +9,11 @@ html, body {
 .nav {
     display: flex;
     flex-shrink: 0;
-    background-color: #93CDD4;
+    background-color: rgba(191, 195, 201, 0.8);
     opacity: 0.7; 
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .menu {
@@ -28,7 +28,7 @@ html, body {
 
 #menu:hover {
     cursor: pointer;
-    color: #900C3F;
+    color: white;
 }
 
 #menu.close {
@@ -60,7 +60,7 @@ html, body {
 
 .menuItems:hover {
     cursor: pointer;
-    color:  #900C3F;
+    color:  black;
 }
 
 a {
@@ -71,12 +71,23 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    color: rgba(191, 195, 201, 0.8);
 }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #bfc3c9;
+    text-align: center;
+    font-weight: bold;
+}
+
 .aboutBody {
-    background-color: #93CDD4;
+    background-color: #bfc3c9;
 }
 .aboutMain {
-    background-color: #93CDD4;
+    background-color: #bfc3c9;
     margin: 3em;
 }
 
@@ -99,10 +110,11 @@ a {
 
 .image {
     margin: 20px;
+    opacity: .8;
 }
 
 .image:hover {
-    opacity: 0.8;
+    opacity: 1;
 }
 
 .imageSize {
@@ -169,7 +181,7 @@ a {
     cursor: pointer;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 680px) {
     #image3 {
         display: none;
     }
