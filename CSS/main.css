@@ -55,17 +55,40 @@ html, body {
 .menuItems {
     margin: 0;
     font-size: 1em;
+    color: whitesmoke;
+}
+
+.menuItems:hover {
+    cursor: pointer;
+    color:  #900C3F;
 }
 
 a {
     text-decoration: none;
-    color: whitesmoke;
 }
 
 .main {
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+.aboutBody {
+    background-color: #93CDD4;
+}
+.aboutMain {
+    background-color: #93CDD4;
+    margin: 3em;
+}
+
+.aboutNav {
+    flex-direction: column;
+    margin-bottom: 0;
+    opacity: 1;
+}
+
+.back {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .image-list {
@@ -87,6 +110,10 @@ a {
     height: 370px;
 }
 
+.roundedImage {
+    border-radius: 5%;
+    max-height: 300px;
+}
 .lightbox {
     display: none;
     position: fixed;
@@ -140,4 +167,16 @@ a {
 .close:hover {
     color: #900C3F;
     cursor: pointer;
+}
+
+@media (max-width: 675px) {
+    #image3 {
+        display: none;
+    }
+}
+
+@media (max-width: 455px) {
+    #image1 {
+        display: none;
+    }
 }
