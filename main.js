@@ -9,14 +9,14 @@ var menu = document.querySelector('#menu');
 var menuPopup = document.querySelector('.menuPopup');
 
 var images = [
-    {url: 'CSS/images/gracie1.jpg'},
-    {url: 'CSS/images/gracie2.jpg'},
-    {url: 'CSS/images/gracie3.jpg'},
-    {url: 'CSS/images/gracie4.jpg'}, 
-    {url: 'CSS/images/gracie5.jpg'}, 
-    {url: 'CSS/images/gracie6.jpg'}, 
-    {url: 'CSS/images/gracie7.jpg'}, 
-    {url: 'CSS/images/gracievid.gif'}
+    {url: 'images/gracie1.jpg'},
+    {url: 'images/gracie2.jpg'},
+    {url: 'images/gracie3.jpg'},
+    {url: 'images/gracie4.jpg'}, 
+    {url: 'images/gracie5.jpg'}, 
+    {url: 'images/gracie6.jpg'}, 
+    {url: 'images/gracie7.jpg'}, 
+    {url: 'images/gracievid.gif'}
 ]
 
 //Functions
@@ -62,9 +62,9 @@ var displayMenu = function() {
 }
 
 var closeMenu = function(event) {
-    if (event.target !== menu) {
-       menuPopup.classList.remove('open');
-    menu.classList.remove('close'); 
+    if (event.target !== menu || event === 'scroll') {
+        menuPopup.classList.remove('open');
+        menu.classList.remove('close');  
     }
 }
 
@@ -83,7 +83,6 @@ for (var i = 0; i < images.length; i++) {
     container.appendChild(item);
 }
 
-//Event Listeners
 lightbox.addEventListener('click', closeModal);
 left.addEventListener('click', changePhotos);
 right.addEventListener('click', changePhotos);

@@ -4,21 +4,19 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    background-color: rgba(191, 195, 201, 0.5);
+    overflow-y: auto;
 }
 
+/* Main Page Elements */
+/* Navbar elements */
 .nav {
     display: flex;
     flex-shrink: 0;
-    background-color: rgba(191, 195, 201, 0.8);
-    opacity: 0.7; 
+    background-color: rgba(130, 227, 242, 0.6);
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
-}
-
-.menu {
-    padding-right: 2em;
-    padding-left: 2em;
 }
 
 #menu {
@@ -55,51 +53,23 @@ html, body {
 .menuItems {
     margin: 0;
     font-size: 1em;
-    color: whitesmoke;
+    color: black;
 }
 
 .menuItems:hover {
     cursor: pointer;
-    color:  black;
+    color:  white;
 }
 
 a {
     text-decoration: none;
 }
 
+/* Image Gallery Styling */
 .main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    color: rgba(191, 195, 201, 0.8);
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #bfc3c9;
-    text-align: center;
-    font-weight: bold;
-}
-
-.aboutBody {
-    background-color: #bfc3c9;
-}
-.aboutMain {
-    background-color: #bfc3c9;
-    margin: 3em;
-}
-
-.aboutNav {
-    flex-direction: column;
-    margin-bottom: 0;
-    opacity: 1;
-}
-
-.back {
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 .image-list {
@@ -122,10 +92,7 @@ a {
     height: 370px;
 }
 
-.roundedImage {
-    border-radius: 5%;
-    max-height: 300px;
-}
+/*Lightbox styling*/
 .lightbox {
     display: none;
     position: fixed;
@@ -179,6 +146,44 @@ a {
 .close:hover {
     color: #900C3F;
     cursor: pointer;
+}
+
+/* Footer styling */
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(130, 227, 242, 0.8);
+    text-align: center;
+    font-weight: bold;
+}
+
+/*About Page Styling*/
+.aboutBody {
+    background-color: #bfc3c9;
+}
+.aboutMain {
+    background-color: #bfc3c9;
+    margin: 3em;
+}
+
+.aboutNav {
+    flex-direction: column;
+    margin-bottom: 0;
+    opacity: 1;
+    background-color: #bfc3c9;
+
+}
+
+.roundedImage {
+    border-radius: 5%;
+    max-height: 300px;
+}
+
+/* Return to main page from about page*/
+.back {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 @media (max-width: 680px) {
