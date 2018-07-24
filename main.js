@@ -4,6 +4,8 @@ var x = document.querySelector('.close');
 var left = document.querySelector('.leftArrow');
 var right = document.querySelector('.rightArrow');
 var index;
+var menu = document.querySelector('#menu');
+var menuPopup = document.querySelector('.menuPopup');
 
 var images = [
     {url: 'CSS/images/gracie1.jpg'},
@@ -19,7 +21,7 @@ var images = [
 var displayModal = function(event) {
     var source = event.target.getAttribute('src');
     index = event.target.getAttribute('data-index');
-    lightbox.classList.toggle('open');
+    lightbox.classList.add('open');
     var lightboxImg = document.querySelector('#lightboxImage');
     lightboxImg.setAttribute('src', source);
 }
@@ -50,6 +52,18 @@ var changePhotosRight = function() {
     lightboxImg.setAttribute('src', source);
 }
 
+var displayMenu = function() {
+    menuPopup.classList.add('open');
+    menu.classList.add('close');
+}
+
+var closeMenu = function(event) {
+    if (event.target !== menu) {
+       menuPopup.classList.remove('open');
+    menu.classList.remove('close'); 
+    }
+}
+
 for (var i = 0; i < images.length; i++) {
     var image = images[i];
     var newImage = document.createElement('img');
@@ -67,4 +81,8 @@ for (var i = 0; i < images.length; i++) {
 lightbox.addEventListener('click', closeModal);
 left.addEventListener('click', changePhotosLeft);
 right.addEventListener('click', changePhotosRight);
+menu.addEventListener('click', displayMenu);
+menuPopup.addEventListener('click', closeMenu);
+window.addEventListener('click', closeMenu);
+window.addEventListener('scroll', closeMenu);
 

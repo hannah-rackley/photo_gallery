@@ -5,6 +5,69 @@ html, body {
     flex-direction: column;
     margin: 0;
 }
+
+.nav {
+    display: flex;
+    flex-shrink: 0;
+    background-color: #93CDD4;
+    opacity: 0.7; 
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.menu {
+    padding-right: 2em;
+    padding-left: 2em;
+}
+
+#menu {
+    padding: 0;
+    margin: 0;
+}
+
+#menu:hover {
+    cursor: pointer;
+    color: #900C3F;
+}
+
+#menu.close {
+    display: none;
+}
+
+.menuPopup {
+    display: none;
+    color: whitesmoke;
+}
+
+.menuPopup.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fullMenu {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menuItems {
+    margin: 0;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .image-list {
     display: flex;
     flex-wrap: wrap;
@@ -24,6 +87,48 @@ html, body {
     height: 370px;
 }
 
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightboxImage {
+    width: 50%;
+    max-width: 1000px;
+    max-height: 100%;
+    margin: auto;
+}
+
+.leftArrow {
+    color: whitesmoke;
+    font-size: 3em;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+}
+
+.rightArrow {
+    color: whitesmoke;
+    font-size: 3em;
+    position: absolute;
+    top: 45%;
+    right: 10%;
+}
+
+.leftArrow:hover, .rightArrow:hover {
+    color: #900C3F;
+    cursor: pointer;
+}
+
 .close {
     position: absolute;
     top: 15px;
@@ -35,60 +140,4 @@ html, body {
 .close:hover {
     color: #900C3F;
     cursor: pointer;
-}
-
-.leftArrow {
-    color: whitesmoke;
-    font-size: 3em;
-    position: absolute;
-    top: 300px;
-    left: 50px;
-}
-
-.rightArrow {
-    color: whitesmoke;
-    font-size: 3em;
-    position: absolute;
-    top: 300px;
-    right: 50px;
-}
-
-.leftArrow:hover, .rightArrow:hover {
-    color: #900C3F;
-    cursor: pointer;
-}
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: black;
-}
-
-.lightbox.open {
-    display: flex;
-}
-
-.lightboxImage {
-    width: 50%;
-    height: auto;
-    margin: auto;
-}
-
-.nav {
-    display: flex;
-    flex-shrink: 0;
-    background-color: #93CDD4;
-    opacity: 0.7; 
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }

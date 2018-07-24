@@ -3,15 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Graciegram</title>
+    <title>Gracie Gallery</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="CSS/main.css" />
 </head>
 <body>
     <header class="nav">
-        <h1>GracieGram</h1>
+        <h1 class="menu">Gracie Gallery</h1>
+        <div class="fullMenu">
+            <h3 id="menu" class="menu">Menu</h3>
+            <div class='menuPopup'>
+                <p class="menuItems"><a href="#photos">Photos</a></p>
+                <p class="menuItems">About</p>
+                <p class="menuItems">More</p>
+        </div>
+    </div>
     </header>
-    <section class="main">
+    <section class="main" id="photos">
        <div class="image-list"></div> 
     </section>
     <div id="lightbox" class="lightbox">
