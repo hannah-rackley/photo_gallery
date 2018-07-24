@@ -1,11 +1,9 @@
 html, body {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;
     background-color: rgba(191, 195, 201, 0.5);
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 /* Main Page Elements */

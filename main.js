@@ -90,4 +90,3 @@ menu.addEventListener('click', displayMenu);
 menuPopup.addEventListener('click', closeMenu);
 window.addEventListener('click', closeMenu);
 window.addEventListener('scroll', closeMenu);
-
