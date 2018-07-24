@@ -31,30 +31,30 @@ html, body {
     display: none;
 }
 
-.menuPopup {
+.menu-popup {
     display: none;
     color: whitesmoke;
 }
 
-.menuPopup.open {
+.menu-popup.open {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.fullMenu {
+.full-menu {
     display:flex;
     flex-direction: column;
     align-items: center;
 }
 
-.menuItems {
+.menu-items {
     margin: 0;
     font-size: 1em;
     color: black;
 }
 
-.menuItems:hover {
+.menu-items:hover {
     cursor: pointer;
     color:  white;
 }
@@ -105,14 +105,14 @@ a {
     display: flex;
 }
 
-.lightboxImage {
+.lightbox-image {
     width: 50%;
     max-width: 1000px;
     max-height: 100%;
     margin: auto;
 }
 
-.leftArrow {
+.left-arrow {
     color: whitesmoke;
     font-size: 3em;
     position: absolute;
@@ -120,7 +120,7 @@ a {
     left: 10%;
 }
 
-.rightArrow {
+.right-arrow {
     color: whitesmoke;
     font-size: 3em;
     position: absolute;
@@ -128,7 +128,7 @@ a {
     right: 10%;
 }
 
-.leftArrow:hover, .rightArrow:hover {
+.lef-aArrow:hover, .right-arrow:hover {
     color: #900C3F;
     cursor: pointer;
 }
@@ -157,15 +157,15 @@ a {
 }
 
 /*About Page Styling*/
-.aboutBody {
+.about-body {
     background-color: #bfc3c9;
 }
-.aboutMain {
+.about-main {
     background-color: #bfc3c9;
     margin: 3em;
 }
 
-.aboutNav {
+.about-nav {
     flex-direction: column;
     margin-bottom: 0;
     opacity: 1;
@@ -173,7 +173,7 @@ a {
 
 }
 
-.roundedImage {
+.rounded-image {
     border-radius: 5%;
     max-height: 300px;
 }
