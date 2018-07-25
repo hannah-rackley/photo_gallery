@@ -1,6 +1,6 @@
 //Global variables
 var container = document.querySelector('.image-list');
-var lightbox = document.querySelector('#lightbox');
+var lightbox = document.querySelector('.lightbox');
 var x = document.querySelector('.close');
 var left = document.querySelector('.left-arrow');
 var right = document.querySelector('.right-arrow');
@@ -21,7 +21,7 @@ var images = [
 
 //Functions
 var setSource = function(source) {
-    var lightboxImg = document.querySelector('#lightbox-image');
+    var lightboxImg = document.querySelector('.lightbox-image');
     lightboxImg.setAttribute('src', source);
 }
 //Modal Functions
@@ -33,7 +33,7 @@ var displayModal = function(event) {
 }
 
 var closeModal = function(event) {
-    if (event.target !== document.querySelector('#lightbox-image') && event.target !== left && event.target !== right) {
+    if (event.target !== document.querySelector('.lightbox-image') && event.target !== left && event.target !== right) {
         lightbox.classList.remove('open');
     }
 }

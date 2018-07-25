@@ -83,6 +83,7 @@ a {
 
 .image:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 .imageSize {
@@ -128,7 +129,7 @@ a {
     right: 10%;
 }
 
-.lef-aArrow:hover, .right-arrow:hover {
+.left-arrow:hover, .right-arrow:hover {
     color: #900C3F;
     cursor: pointer;
 }
