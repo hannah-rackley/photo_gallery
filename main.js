@@ -68,19 +68,19 @@ var closeMenu = function(event) {
 
 //Modal Function
 var closeModal = function(event) {
-    if (event.target !== document.querySelector('.lightbox-image') && event.target !== left && event.target !== right && event.target) {
+    if (event.target !== document.querySelector('.lightbox-image') && event.target !== left && event.target !== right) {
         lightbox.classList.remove('open');
     }
 }
 
 //Photo Changing Function
 var changePhotos = function(event) {
-    if (event.target === left) {
+    if (event.target === left || event.key === "ArrowLeft") {
         currentIndex--;
         if (currentIndex < 0) {
             currentIndex = (images.length - 1);
         }
-    } else if (event.target === right) {
+    } else if (event.target === right || event.key === "ArrowRight") {
         currentIndex++;
         if (currentIndex >= images.length) {
             currentIndex = 0;
@@ -89,10 +89,21 @@ var changePhotos = function(event) {
     setSource(currentIndex);
     setCaption(currentIndex);
 }
+
+var keyDown = function(event) {
+    //event.preventDefault();
+    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        changePhotos(event);
+    } else if (event.key === "Escape") {
+        closeModal(event);
+    }
+}
+
 menu.addEventListener('click', displayMenu);
 menuPopup.addEventListener('click', closeMenu);
 window.addEventListener('click', closeMenu);
 window.addEventListener('scroll', closeMenu);
+window.addEventListener('keydown', keyDown);
 left.addEventListener('click', changePhotos);
 right.addEventListener('click', changePhotos);
 lightbox.addEventListener('click', closeModal);
