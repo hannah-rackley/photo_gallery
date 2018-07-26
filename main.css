@@ -2,7 +2,7 @@ html, body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-color: rgba(191, 195, 201, 0.5);
+    background-color: rgba(191, 195, 201, 0.2);
     overflow-y: scroll;
 }
 
@@ -11,10 +11,14 @@ html, body {
 .nav {
     display: flex;
     flex-shrink: 0;
-    background-color: rgba(130, 227, 242, 0.6);
+    background-color: rgba(191, 195, 201, 0.2);
     width: 100%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+.nav-items {
+    margin-right: 2em;
+    margin-left: 1em;
 }
 
 #menu {
@@ -76,19 +80,41 @@ a {
     justify-content: space-evenly;
 }
 
-.image {
+.item {
+    position: relative;
     margin: 20px;
     opacity: .8;
 }
 
-.image:hover {
+.item:hover {
     opacity: 1;
     cursor: pointer;
+}
+
+.item:hover .caption{
+    opacity: 1;
+    cursor: pointer;
+    display: flex;
 }
 
 .imageSize {
     width: 300px;
     height: 370px;
+}
+
+.caption {
+    display: none;
+    color: white;
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    left: 1em;
+    bottom: 0;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 1px 2px black;
 }
 
 /*Lightbox styling*/
@@ -108,7 +134,7 @@ a {
 
 .lightbox-image {
     width: 50%;
-    max-width: 1000px;
+    max-width: 800px;
     max-height: 100%;
     margin: auto;
 }
@@ -152,7 +178,7 @@ a {
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: rgba(130, 227, 242, 0.8);
+    background-color: rgba(191,195,201, 0.2);
     text-align: center;
     font-weight: bold;
 }
