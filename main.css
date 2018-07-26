@@ -225,16 +225,46 @@ a {
 .back {
     margin-top: 1em;
     margin-bottom: 1em;
+} 
+@media (max-width:1150px) {
+    .image-caption-box {
+        flex-direction: column;
+        height: 90%;
+    }
+    .lightbox-image {
+        width: 100%;
+        height: 85%;
+    }
+    .lightbox-caption {
+        justify-content: center;
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-right: 0;
+        padding-left: 0;
+        height: 15%;
+    }
 }
-
 @media (max-width: 680px) {
     #image3 {
         display: none;
+    }
+    .image-caption-box {
+        height: 70%;
     }
 }
 
 @media (max-width: 455px) {
     #image1 {
         display: none;
+    }
+    .image-caption-box {
+        height: 55%;
+    }
+    .lightbox-image {
+        height: 75%;
+    }
+    .lightbox-caption {
+        height: 25%;
     }
 }
