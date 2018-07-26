@@ -1,10 +1,11 @@
 //Global variables
-var container = document.querySelector('.image-list');
-var lightbox = document.querySelector('.lightbox');
-var left = document.querySelector('.left-arrow');
-var right = document.querySelector('.right-arrow');
-var menu = document.querySelector('#menu');
-var menuPopup = document.querySelector('.menu-popup');
+var container = $('.image-list');
+var lightbox = $('.lightbox');
+var left = $('.left-arrow');
+var right = $('.right-arrow');
+var menu = $('#menu');
+var menuPopup = $('.menu-popup');
+var lightboxImg = $('.lightbox-image');
 
 var images = [
     {url: 'images/gracie1.jpg', caption: 'Gracie close-up plus a bunch of extra text to determine if my caption will wrap the text within the image.'},
@@ -20,56 +21,54 @@ var currentIndex;
 
 //Image List creation
 images.forEach(function(image, i){
-    var newImage = document.createElement('img');
-    var caption = document.createElement('p');
-    newImage.classList.add('imageSize');
-    newImage.setAttribute('src', image.url);
-    caption.textContent = image.caption;
-    caption.classList.add('caption');
-    var item = document.createElement('div');
-    item.appendChild(newImage);
-    item.appendChild(caption);
-    item.classList.add('item');
-    container.appendChild(item);
+    var newImage = $('<img>');
+    newImage.attr('src', image.url);
+    var caption = $('<p>', { text: image.caption});
+    newImage.addClass('imageSize');
+    caption.addClass('caption');
+    var item = $('<div>');
+    item.append(newImage);
+    item.append(caption);
+    item.addClass('item');
+    container.append(item);
 
     //Modal display function
     var displayModal = function() {
         currentIndex = i;
-        lightbox.classList.add('open');
+        lightbox.addClass('open');
         setSource(i);
         setCaption(i);
     }
-    item.addEventListener('click', displayModal);
+    item.on('click', displayModal);
 });
 
 var setSource = function(index) {
-    var lightboxImg = document.querySelector('.lightbox-image');
     var source = images[index].url
-    lightboxImg.setAttribute('src', source);
+    lightboxImg.attr('src', source);
 }
 
 var setCaption = function(index) {
-    var lightboxCaption = document.querySelector('.lightbox-caption');
-    var caption = images[index].caption
-    lightboxCaption.textContent = caption;
+    var lightboxCaption = $('.lightbox-caption');
+    var caption = images[index].caption;
+    lightboxCaption.attr('text', caption);
 }
 //Menu Functions
 var displayMenu = function() {
-    menuPopup.classList.add('open');
-    menu.classList.add('close');
+    menuPopup.addClass('open');
+    menu.addClass('close');
 }
 
 var closeMenu = function(event) {
     if (event.target !== menu || event === 'scroll') {
-        menuPopup.classList.remove('open');
-        menu.classList.remove('close');  
+        menuPopup.removeClass('open');
+        menu.removeClass('close');  
     }
 }
 
 //Modal Function
 var closeModal = function(event) {
-    if (event.target !== document.querySelector('.lightbox-image') && event.target !== left && event.target !== right) {
-        lightbox.classList.remove('open');
+    if (event.target !== lightboxImg && event.target !== left && event.target !== right) {
+        lightbox.removeClass('open');
     }
 }
 
@@ -99,13 +98,13 @@ var keyDown = function(event) {
     }
 }
 
-menu.addEventListener('click', displayMenu);
-menuPopup.addEventListener('click', closeMenu);
-window.addEventListener('click', closeMenu);
-window.addEventListener('scroll', closeMenu);
-window.addEventListener('keydown', keyDown);
-left.addEventListener('click', changePhotos);
-right.addEventListener('click', changePhotos);
-lightbox.addEventListener('click', closeModal);
+menu.on('click', displayMenu);
+menuPopup.on('click', closeMenu);
+$(window).on('click', closeMenu);
+$(window).on('scroll', closeMenu);
+$(window).on('keydown', keyDown);
+left.on('click', changePhotos);
+right.on('click', changePhotos);
+lightbox.on('click', closeModal);
 
 
