@@ -37,6 +37,7 @@ images.forEach(function(image, i){
         currentIndex = i;
         lightbox.classList.add('open');
         setSource(i);
+        setCaption(i);
     }
     item.addEventListener('click', displayModal);
 });
@@ -45,6 +46,12 @@ var setSource = function(index) {
     var lightboxImg = document.querySelector('.lightbox-image');
     var source = images[index].url
     lightboxImg.setAttribute('src', source);
+}
+
+var setCaption = function(index) {
+    var lightboxCaption = document.querySelector('.lightbox-caption');
+    var caption = images[index].caption
+    lightboxCaption.textContent = caption;
 }
 //Menu Functions
 var displayMenu = function() {
@@ -80,6 +87,7 @@ var changePhotos = function(event) {
         }
     }
     setSource(currentIndex);
+    setCaption(currentIndex);
 }
 menu.addEventListener('click', displayMenu);
 menuPopup.addEventListener('click', closeMenu);
