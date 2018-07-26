@@ -6,6 +6,7 @@ var right = $('.right-arrow');
 var menu = $('#menu');
 var menuPopup = $('.menu-popup');
 var lightboxImg = $('.lightbox-image');
+var lightboxCaption = $('.lightbox-caption');
 
 var images = [
     {url: 'images/gracie1.jpg', caption: 'Gracie close-up plus a bunch of extra text to determine if my caption will wrap the text within the image.'},
@@ -23,7 +24,8 @@ var currentIndex;
 images.forEach(function(image, i){
     var newImage = $('<img>');
     newImage.attr('src', image.url);
-    var caption = $('<p>', { text: image.caption});
+    var caption = $('<p>');
+    caption.text(image.caption);
     newImage.addClass('imageSize');
     caption.addClass('caption');
     var item = $('<div>');
@@ -48,9 +50,8 @@ var setSource = function(index) {
 }
 
 var setCaption = function(index) {
-    var lightboxCaption = $('.lightbox-caption');
     var caption = images[index].caption;
-    lightboxCaption.attr('text', caption);
+    lightboxCaption.text(caption);
 }
 //Menu Functions
 var displayMenu = function() {
@@ -67,19 +68,19 @@ var closeMenu = function(event) {
 
 //Modal Function
 var closeModal = function(event) {
-    if (event.target !== lightboxImg && event.target !== left && event.target !== right) {
+    if (event.target !== lightboxImg[0] && event.target !== left[0] && event.target !== right[0]) {
         lightbox.removeClass('open');
     }
 }
 
 //Photo Changing Function
 var changePhotos = function(event) {
-    if (event.target === left || event.key === "ArrowLeft") {
+    if (event.target === left[0] || event.key === "ArrowLeft") {
         currentIndex--;
         if (currentIndex < 0) {
             currentIndex = (images.length - 1);
         }
-    } else if (event.target === right || event.key === "ArrowRight") {
+    } else if (event.target === right[0] || event.key === "ArrowRight") {
         currentIndex++;
         if (currentIndex >= images.length) {
             currentIndex = 0;
