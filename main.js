@@ -68,7 +68,7 @@ var closeMenu = function(event) {
 
 //Modal Function
 var closeModal = function(event) {
-    if (event.target !== lightboxImg[0] && event.target !== left[0] && event.target !== right[0]) {
+    if (event.target !== lightboxCaption[0] && event.target !== lightboxImg[0] && event.target !== left[0] && event.target !== right[0]) {
         lightbox.removeClass('open');
     }
 }
