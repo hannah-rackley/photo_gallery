@@ -60,7 +60,7 @@ var displayMenu = function() {
 }
 
 var closeMenu = function(event) {
-    if (event.target !== menu || event === 'scroll') {
+    if (event.target !== menu[0] || event === 'scroll') {
         menuPopup.removeClass('open');
         menu.removeClass('close');  
     }
