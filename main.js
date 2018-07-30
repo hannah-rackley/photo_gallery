@@ -24,24 +24,27 @@ var currentIndex;
 images.forEach(function(image, i){
     var newImage = $('<img>');
     newImage.attr('src', image.url);
+    newImage.addClass('imageSize');
+
     var caption = $('<p>');
     caption.text(image.caption);
-    newImage.addClass('imageSize');
     caption.addClass('caption');
+
     var item = $('<div>');
+    item.addClass('item');
     item.append(newImage);
     item.append(caption);
-    item.addClass('item');
+
     container.append(item);
 
-    //Modal display function
-    var displayModal = function() {
+    //Lightbox display function
+    var displayLightbox = function() {
         currentIndex = i;
         lightbox.addClass('open');
         setSource(i);
         setCaption(i);
     }
-    item.on('click', displayModal);
+    item.on('click', displayLightbox);
 });
 
 var setSource = function(index) {
@@ -66,36 +69,40 @@ var closeMenu = function(event) {
     }
 }
 
-//Modal Function
-var closeModal = function(event) {
+//Lightbox Function
+var closeLightbox = function(event) {
     if (event.target !== lightboxCaption[0] && event.target !== lightboxImg[0] && event.target !== left[0] && event.target !== right[0]) {
         lightbox.removeClass('open');
     }
 }
 
-//Photo Changing Function
-var changePhotos = function(event) {
-    if (event.target === left[0] || event.key === "ArrowLeft") {
-        currentIndex--;
-        if (currentIndex < 0) {
-            currentIndex = (images.length - 1);
-        }
-    } else if (event.target === right[0] || event.key === "ArrowRight") {
-        currentIndex++;
-        if (currentIndex >= images.length) {
-            currentIndex = 0;
-        }
+//Photo Changing Functions
+var changePhotoRight = function(event) {
+    currentIndex++;
+    if (currentIndex >= images.length) {
+        currentIndex = 0;
+    }
+    setSource(currentIndex);
+    setCaption(currentIndex);
+}
+
+var changePhotoLeft = function(event) {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = (images.length - 1);
     }
     setSource(currentIndex);
     setCaption(currentIndex);
 }
 
 var keyDown = function(event) {
-    //event.preventDefault();
-    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-        changePhotos(event);
+    event.preventDefault();
+    if (event.key === "ArrowRight") {
+        changePhotoRight(event);
+    } else if (event.key === "ArrowLeft") {
+        changePhotoLeft(event);
     } else if (event.key === "Escape") {
-        closeModal(event);
+        closeLightbox(event);
     }
 }
 
@@ -104,8 +111,8 @@ menuPopup.on('click', closeMenu);
 $(window).on('click', closeMenu);
 $(window).on('scroll', closeMenu);
 $(window).on('keydown', keyDown);
-left.on('click', changePhotos);
-right.on('click', changePhotos);
-lightbox.on('click', closeModal);
+left.on('click', changePhotoLeft);
+right.on('click', changePhotoRight);
+lightbox.on('click', closeLightbox);
 
 

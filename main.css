@@ -3,16 +3,13 @@ html, body {
     flex-direction: column;
     margin: 0;
     background-color: rgba(191, 195, 201, 0.2);
-    overflow-y: scroll;
 }
 
 /* Main Page Elements */
 /* Navbar elements */
 .nav {
     display: flex;
-    flex-shrink: 0;
     background-color: rgba(191, 195, 201, 0.2);
-    width: 100%;
     align-items: center;
     justify-content: space-between;
 }
