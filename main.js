@@ -15,7 +15,7 @@ var images = [
     {url: 'images/gracie4.jpg', caption: 'Gracie enjoying the sun'}, 
     {url: 'images/gracie5.jpg', caption: 'Gracie with fancy paws'}, 
     {url: 'images/gracie6.jpg', caption: 'Gracie covered in mud'}, 
-    {url: 'images/gracie7.jpg', caption: 'Gracie being super sassy'}, 
+    {url: 'images/gracie7.jpg', caption: 'Gracie being sassy'}, 
     {url: 'images/gracievid.gif', caption: 'Gracie living life'}
 ]
 var currentIndex;

@@ -4,6 +4,10 @@
 
 A website that contains a static list of photos of my dog, Gracie. The photos can be pulled up into a modal, and you can flip through the photos using the arrow controls within the modal.
 
+## Flexbox
+----------
+Flexbox played a major role in creating responsive design for this project.
+
 ## jQuery
 ---------
 This photo gallery was originally utilizing the DOM, but I later migrated everything over to get some more practice using jQuery. 
