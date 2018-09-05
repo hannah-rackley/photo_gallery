@@ -9,13 +9,13 @@ var lightboxImg = $('.lightbox-image');
 var lightboxCaption = $('.lightbox-caption');
 
 var images = [
-    {url: 'images/gracie1.jpg', caption: 'Gracie close-up plus a bunch of extra text to determine if my caption will wrap the text within the image.'},
-    {url: 'images/gracie2.jpg', caption: 'Gracie distant stare'},
+    {url: 'images/gracie1.jpg', caption: 'Gracie\'s close-up'},
+    {url: 'images/gracie2.jpg', caption: 'Gracie\'s distant stare'},
     {url: 'images/gracie3.jpg', caption: 'Gracie after a bath'},
     {url: 'images/gracie4.jpg', caption: 'Gracie enjoying the sun'}, 
     {url: 'images/gracie5.jpg', caption: 'Gracie with fancy paws'}, 
     {url: 'images/gracie6.jpg', caption: 'Gracie covered in mud'}, 
-    {url: 'images/gracie7.jpg', caption: 'Gracie super sassy'}, 
+    {url: 'images/gracie7.jpg', caption: 'Gracie being super sassy'}, 
     {url: 'images/gracievid.gif', caption: 'Gracie living life'}
 ]
 var currentIndex;
